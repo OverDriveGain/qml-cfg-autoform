@@ -1,0 +1,244 @@
+constants:
+  cert_source:
+  - 129 Trace
+  - JAA F1
+  - FAA 8130-3
+  - EASA F1
+  - 145 Trace
+  - Company C of C
+  - OEM
+  - None
+  - qwe
+  cond:
+  - NS
+  - OH
+  - NE
+  - FN
+  - N
+  - SV
+  - AR
+  - NQ
+  currency:
+  - GBP
+  - Euro
+  - Dollar
+  delivery:
+  - 1 week
+  - 2 weeks
+  - 3 weeks
+  - 4 weeks
+  - 6 weeks
+  - 8 weeks
+  - 10 weeks
+  - 12 weeks
+  - 1 day
+  - 2 days
+  - 3 days
+  - 4 days
+  - 5 days
+  - 6 days
+  - NQ
+  document_types:
+  - Certificate
+  - Photo
+  - Shop Report
+  - Other
+  expiry:
+  - 1 week
+  - 3 Weeks
+  - 2 Days
+  - 1 Day
+  - 4 Months
+  fob:
+  - IKA, Tehran / IR
+  - Dubai
+  minimum_order:
+  - None, unless specified.
+  - '400'
+  - '200'
+  - '1000'
+  prepared_by:
+  - John Doe
+  - Jane Smith
+  - David Johnson
+  - Emily Davis
+  - Michael Brown
+  - Samantha Wilson
+  - Jacob Martinez
+  - Olivia Rodriguez
+  - Daniel Lee
+  - Isabella Hernandez
+  terms_of_payment:
+  - Net 30
+  - Net 10, 2% discount
+  - COD
+  - Payment in advance
+database:
+  company:
+    db_headers:
+    - company
+    - address
+    - city
+    - country
+  contact:
+    db_headers:
+    - contact
+    - company
+    - phone
+    - email
+  dir: excel-files/database
+  inventory:
+    db_headers:
+    - pn
+    - desc
+    - qty
+    - cond
+    - price
+    - supplier
+    - date
+    - delivery
+    - ac
+    - vc
+    - mfg
+  invoice:
+    db_headers:
+    - pn
+    - desc
+    - qty
+    - customer_ref
+    - our_ref
+    - cond
+    - offer
+    - date
+    - contact name
+    - priority
+    - price
+    - bill_to
+    - ship_to
+  password: ''
+  po:
+    db_headers:
+    - pn
+    - desc
+    - qty
+    - customer_ref
+    - cond
+    - offer
+    - date
+    - contact name
+    - priority
+    - price
+    - bill_to
+    - ship_to
+  port: ''
+  quote:
+    db_headers:
+    - pn
+    - desc
+    - qty
+    - customer_ref
+    - our_ref
+    - cond
+    - offer
+    - date
+    - contact name
+    - priority
+    - price
+    - bill_to
+    - ship_to
+  rfq:
+    db_headers:
+    - pn
+    - desc
+    - qty
+    - customer_ref
+    - cond
+    - offer
+    - date
+    - contact name
+    - priority
+  server: ''
+  username: ''
+issuing:
+  auto_set_contacts: true
+  invoice:
+    id:
+      length: 6
+      prefix: IAZ/
+    output_dir: excel-files/invoice
+  po:
+    id:
+      length: 6
+      prefix: QAZ/
+    output_dir: excel-files/quotes
+  quote:
+    id:
+      length: 6
+      prefix: QAZ/
+    output_dir: excel-files/quotes
+template:
+  invoice:
+    aat:
+      dir: excel-files/templates/invoice/aat
+      logo_dir: excel-files/templates/invoice/aat/logo.png
+    default: aat
+    shrink_to_items: false
+  logo_dir: excel-files/logo.png
+  quote:
+    aat:
+      dir: excel-files/templates/quote/aat
+      logo_dir: excel-files/templates/quote/aat/logo.png
+    default: aat
+    prompt_choose: true
+    shrink_to_items: false
+    sparescrew:
+      dir: excel-files/templates/quote/sparescrew
+      logo_dir: excel-files/templates/quote/sparescrew/logo.png
+uneditable:
+  inventory_list:
+  - Partners
+  - Hannover
+view:
+  table:
+    columns:
+      width:
+        '#': 30
+        ac: 160
+        bill_to.contact: 160
+        cert_source: 160
+        cond: 160
+        contact.company.company: 160
+        contact.contact: 231
+        currency: 160
+        customer_ref: 160
+        date: 164
+        delivery: 190
+        desc: 160
+        expiry: 160
+        fob: 160
+        freight: 160
+        line_amt: 160
+        mfg: 160
+        minimum_order: 160
+        misc_charge: 160
+        our_ref: 160
+        paid: 160
+        pn: 304
+        po.customer_ref: 160
+        prepared_by: 160
+        price: 160
+        priority: 160
+        qty: 71
+        quote.our_ref: 160
+        remarks: 160
+        rfq.customer_ref: 160
+        ship_to.contact: 160
+        tax: 160
+        terms_of_payment: 160
+        trans.contact.contact: 160
+        trans.customer_ref: 160
+        trans.our_ref: 160
+    pagination:
+    - 100
+    - 200
+    - all

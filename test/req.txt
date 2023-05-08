@@ -1,0 +1,4 @@
+PySide2==5.15.2.1
+PyYAML==6.0
+qasync==0.24.0
+shiboken2==5.15.2.1

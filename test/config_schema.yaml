@@ -1,0 +1,245 @@
+{
+  'database': {
+    'required': True,
+    'type': 'dict',
+    'meta': {
+      'text': 'Database',
+      'parent': True
+    },
+    'schema': {
+      'server': {
+        'required': True,
+        'type': 'string',
+        'meta': {
+          'text': 'Database server address'
+        }
+      },
+      'port': {
+        'required': True,
+        'type': 'string',
+        'meta': {
+          'text': 'Database server port'
+        }
+      },
+      'username': {
+        'required': True,
+        'type': 'string',
+        'meta': {
+          'text': 'Database username'
+        }
+      },
+      'password': {
+        'required': True,
+        'type': 'string',
+        'meta': {
+          'text': 'Database Password'
+        }
+      }
+    }
+  },
+  'constants': {
+    'required': True,
+    'type': 'dict',
+    'meta': {
+      'text': 'Constant values',
+      'parent': True
+    },
+    'schema': {
+      'cond': {
+        'required': True,
+        'type': 'orderedList',
+        'meta': {
+          'text': 'Condition'
+        }
+      },
+      'cert_source': {
+        'required': True,
+        'type': 'orderedList',
+        'meta': {
+          'text': 'Certificate Source'
+        }
+      },
+      'delivery': {
+        'required': True,
+        'type': 'orderedList',
+        'meta': {
+          'text': 'Delivery'
+        }
+      },
+      'currency': {
+        'required': True,
+        'type': 'orderedList',
+        'meta': {
+          'text': 'Currency'
+        }
+      },
+      'prepared_by': {
+        'required': True,
+        'type': 'orderedList',
+        'meta': {
+          'text': 'Prepared By'
+        }
+      },
+      'fob': {
+        'required': True,
+        'type': 'orderedList',
+        'meta': {
+          'text': 'FOB'
+        }
+      },
+      'terms_of_payment': {
+        'required': True,
+        'type': 'orderedList',
+        'meta': {
+          'text': 'Terms of Payment'
+        }
+      },
+      'minimum_order': {
+        'required': True,
+        'type': 'orderedList',
+        'meta': {
+          'text': 'Minimum Order'
+        }
+      },
+      'expiry': {
+        'required': True,
+        'type': 'orderedList',
+        'meta': {
+          'text': 'Expiry'
+        }
+      },
+      'document_type': {
+        'required': True,
+        'type': 'orderedList',
+        'meta': {
+          'text': 'Items document types'
+        }
+      }
+    }
+  },
+  'template': {
+    'required': True,
+    'type': 'dict',
+    'meta': {
+      'text': 'Templates',
+      'parent': True
+    },
+    'schema': {
+      'logo_dir': {
+        'required': True,
+        'type': 'dir',
+        'meta': {
+          'text': 'Directory of logo',
+          'type': 'dropdown'
+        }
+      },
+      'quote': {
+        'required': True,
+        'type': 'dict',
+        'schema': {
+          'shrink_to_items': {
+            'type': 'checkbox',
+            'meta': {
+              'text': 'Shrink to items'
+            }
+          },
+          'prompt_choose': {
+            'type': 'checkbox',
+            'meta': {
+              'text': 'Choose Template On Each Issue'
+            }
+          }
+        },
+        'meta': {
+          'text': 'Quote',
+          'parent': True
+        }
+      },
+      'invoice': {
+        'required': True,
+        'type': 'dict',
+        'schema': {
+          'shrink_to_items': {
+            'type': 'checkbox',
+            'meta': {
+              'text': 'Shrink to items'
+            }
+          },
+          'prompt_choose': {
+            'type': 'checkbox',
+            'meta': {
+              'text': 'Choose Template On Each Issue'
+            }
+          }
+        },
+        'meta': {
+          'text': 'Invoice',
+          'parent': True
+        }
+      }
+    }
+  },
+  'issuing': {
+    'required': True,
+    'type': 'dict',
+    'meta': {
+      'text': 'Issuing',
+      'parent': True
+    },
+    'schema': {
+      'auto_set_contacts': {
+        'required': True,
+        'type': 'checkbox',
+        'meta': {
+          'text': 'Auto setting of ship and bill'
+        }
+      },
+      'quote': {
+        'required': True,
+        'type': 'dict',
+        'schema': {
+          'id': {
+            'type': 'id',
+            'meta': {
+              'text': 'ID'
+            }
+          },
+          'output_dir': {
+            'type': 'dir',
+            'meta': {
+              'text': 'Output directory',
+              'type': 'dir'
+            }
+          }
+        },
+        'meta': {
+          'text': 'Quote',
+          'parent': True
+        }
+      },
+      'invoice': {
+        'required': True,
+        'type': 'dict',
+        'schema': {
+          'id': {
+            'type': 'id',
+            'meta': {
+              'text': 'ID'
+            }
+          },
+          'output_dir': {
+            'type': 'dir',
+            'meta': {
+              'text': 'Output directory',
+              'type': 'dir'
+            }
+          }
+        },
+        'meta': {
+          'text': 'Invoice',
+          'parent': True
+        }
+      }
+    }
+  }
+}
